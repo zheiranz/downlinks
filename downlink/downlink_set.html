@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Downlinks</title>
+</head>
+<body>
+    <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox">
+    <label for="transmit_period">Transmit Period</label>
+    <input type="text" id="transmit_period_text" placeholder="Anzahl">
+    <br>
+
+    <input type="checkbox" id="history_period" value="history_period_text" class="checkbox">
+    <label for="history_period">History Period</label>
+    <input type="text" id="history_period_text" placeholder="Sekunden">
+    <br>
+
+    <input onclick="calculate()" type="submit" VALUE="Berechnen">
+</body>
+
+<script>
+    function calculate() {
+        let table = document.getElementsByClassName('checkbox');
+        let downlink = "41";
+        for (let i=0; i<table.length; i++){
+            if (table[i].checked){
+                if (table[i].value === "transmit_period_text") {
+                    downlink += "01";
+                    let hex = parseInt(document.getElementById("transmit_period_text").value).toString(16).toUpperCase()
+                    hex = "0".repeat(4-hex.length) + hex
+                    downlink += hex
+
+                } if (table[i].value === "history_period_text"){
+                    downlink += "15";
+                    let hex
+                }
+            }
+        }
+        alert(downlink)
+    }
+</script>
+</html>
