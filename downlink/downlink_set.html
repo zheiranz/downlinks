@@ -12,7 +12,12 @@
 
     <input type="checkbox" id="history_period" value="history_period_text" class="checkbox">
     <label for="history_period">History Period</label>
-    <input type="text" id="history_period_text" placeholder="Sekunden">
+    <input type="text" id="history_period_text" placeholder="Minuten">
+    <br>
+
+    <input type="checkbox" id="time_stamping" class="checkbox">
+    <label for="time_stamping">Time Stamping</label>
+
     <br>
 
     <input onclick="calculate()" type="submit" VALUE="Berechnen">
@@ -32,7 +37,11 @@
 
                 } if (table[i].value === "history_period_text"){
                     downlink += "15";
-                    let hex
+                    let hex = (parseInt(document.getElementById("history_period_text").value)*30).toString(16).toUpperCase()
+                    hex = "0".repeat(4-hex.length) + hex
+                    downlink += hex
+                } if (table[i].id === "time_stamping"){
+                    downlink += "1201"
                 }
             }
         }
