@@ -6,16 +6,13 @@ html, body {
     width: 100%;
     margin: 0;
 }
-header {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-}
-h1, h2, h3, h4, h5, h6 {
+
+h1{
     font-family: "Segoe UI",Arial,sans-serif;
     font-weight: 400;
     margin: 10px 0;
 }
+
 .image_background{
     width: 100%;
     min-height: 300px;
@@ -23,16 +20,19 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #000000;
 }
 
-.boxed{
-    text-align: center;
-    margin: 10px auto;
-    width: 300px;
-    height: auto;
-}
-
 .black{
     color: white;
     background-color: black;
+}
+
+.center{
+    text-align: center;
+}
+.center div{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-left: 3px;
 }
 
 .animate-bottom{

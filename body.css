@@ -1,0 +1,23 @@
+.wrapperCalculation{
+    margin: 0 auto;
+    width: auto;
+}
+.wrapperCalculation .calculate{
+    width: 60%;
+    height: 200px;
+    background: pink;
+    float: left;
+}
+
+.wrapperCalculation .buttonCalculation{
+    width: 40%;
+    height: 200px;
+    background: yellow;
+    float: left;
+}
+
+.buttonCalculation button{
+    text-align: center;
+    width: 400px;
+
+}

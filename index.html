@@ -4,54 +4,58 @@
     <title>Downlink Generator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="body.css">
 </head>
 <body>
 
 <header>
+    <!--
     <div class="image_background">
-        <div class="center boxed">
+        <div class="center">
             <h1 class="animate-bottom black" style="margin-bottom: 0">Downlink Generator</h1>
-            <button onclick="location.href = 'https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf';">Technical Reference Manual</button>
+            <button onclick="location.href='https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf';">Technical Reference Manual</button>
+        </div>
+    </div>
+    -->
+    <div class="image_background">
+        <div class="center">
+            <div>
+                <h1 class="animate-bottom black" style="margin-bottom: 0">Downlink Generator</h1>
+                <button onclick="location.href='https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf';">Technical Reference Manual</button>
+            </div>
         </div>
     </div>
 </header>
 
-<div>
-    <div>
-        <label for="transmit_period">Transmit Period</label><input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox">
+<div class="wrapperCalculation">
+    <div class="calculate">
+        <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Transmit Period</label>
         <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
         <br>
 
-        <label for="history_period">History Period</label><input type="checkbox" id="history_period" value="history_period_text" class="checkbox">
+        <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">History Period</label>
         <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
         <br>
 
-        <label for="time_stamping">Time Stamping</label><input type="checkbox" id="time_stamping" class="checkbox">
-        <label>
-            <input type="radio" name="time_stamping" value="1201">
-            On
-        </label>
-        <label>
-            <input type="radio" name="time_stamping" value="1200" checked="checked">
-            Off
-        </label>
+        <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Time Stamping</label>
+        <label><input type="radio" name="time_stamping" value="1201">On</label>
+        <label><input type="radio" name="time_stamping" value="1200" checked="checked">Off</label>
 
         <br>
 
         <input onclick="calculate()" type="submit" VALUE="Berechnen">
     </div>
-    <div>
+    <div class="buttonCalculation">
         <button onclick="set_Result('4117000000111700000000')">Reset Counter</button> <br>
         <button onclick="set_Result('41010006150708')">Stündliche Messung; nach sechs Stunden senden</button> <br>
         <button onclick="set_Result('4101000C1501C2')">15-minütliche Messung; nach drei Stunden senden</button> <br>
         <button onclick="set_Result('411433')">Activate Counter B</button> <br>
         <button onclick="set_Result('411423')">Deactivate Counter B</button> <br>
     </div>
-
 </div>
 <div>
-    <input type="text" value="" class="result" id="result_field" readonly>
+    <label for="result_field"></label><input type="text" value="" class="result" id="result_field" readonly>
 </div>
 </body>
 <script>
