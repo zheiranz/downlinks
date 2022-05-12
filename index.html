@@ -18,17 +18,73 @@
 </header>
 
 <div>
-    <div onclick="window.location.href = 'http://example.com';">
+    <div>
+        <label for="transmit_period">Transmit Period</label><input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox">
+        <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
+        <br>
 
+        <label for="history_period">History Period</label><input type="checkbox" id="history_period" value="history_period_text" class="checkbox">
+        <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
+        <br>
+
+        <label for="time_stamping">Time Stamping</label><input type="checkbox" id="time_stamping" class="checkbox">
+        <label>
+            <input type="radio" name="time_stamping" value="1201">
+            On
+        </label>
+        <label>
+            <input type="radio" name="time_stamping" value="1200" checked="checked">
+            Off
+        </label>
+
+        <br>
+
+        <input onclick="calculate()" type="submit" VALUE="Berechnen">
     </div>
-    <div onclick="window.location.href = 'http://example.com';">
-
-    </div>
-    <div onclick="window.location.href = 'http://example.com';">
-
+    <div>
+        <button onclick="set_Result('4117000000111700000000')">Reset Counter</button> <br>
+        <button onclick="set_Result('41010006150708')">Stündliche Messung; nach sechs Stunden senden</button> <br>
+        <button onclick="set_Result('4101000C1501C2')">15-minütliche Messung; nach drei Stunden senden</button> <br>
+        <button onclick="set_Result('411433')">Activate Counter B</button> <br>
+        <button onclick="set_Result('411423')">Deactivate Counter B</button> <br>
     </div>
 
 </div>
-
+<div>
+    <input type="text" value="" class="result" id="result_field" readonly>
+</div>
 </body>
+<script>
+    function set_Result(downlink){
+        document.getElementById("result_field").value = downlink
+    }
+    function calculate() {
+        let table = document.getElementsByClassName('checkbox');
+        let downlink = "41";
+        for (let i=0; i<table.length; i++){
+            if (table[i].checked){
+                if (table[i].value === "transmit_period_text") {
+                    downlink += "01";
+                    let hex = parseInt(document.getElementById("transmit_period_text").value).toString(16).toUpperCase()
+                    hex = "0".repeat(4-hex.length) + hex
+                    downlink += hex
+
+                } if (table[i].value === "history_period_text"){
+                    downlink += "15";
+                    let hex = (parseInt(document.getElementById("history_period_text").value)*30).toString(16).toUpperCase()
+                    hex = "0".repeat(4-hex.length) + hex
+                    downlink += hex
+                } if (table[i].id === "time_stamping"){
+                    let radio_buttons = document.getElementsByName("time_stamping")
+                    for (let x=0; x<radio_buttons.length; x++){
+                        if (radio_buttons[x].checked){
+                            downlink += radio_buttons[x].value;
+                        }
+                    }
+                }
+            }
+        }
+        document.getElementById("result_field").value = downlink;
+    }
+</script>
 </html>
