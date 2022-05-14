@@ -30,15 +30,15 @@
 
 <div class="wrapperCalculation">
     <div class="calculate">
-        <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Transmit Period</label>
+        <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Messanzahl - Transmit Period</label>
         <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
         <br>
 
-        <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">History Period</label>
+        <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
         <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
         <br>
 
-        <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Time Stamping</label>
+        <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
         <label><input type="radio" name="time_stamping" value="1201">On</label>
         <label><input type="radio" name="time_stamping" value="1200" checked="checked">Off</label>
 
@@ -47,11 +47,11 @@
         <input onclick="calculate()" type="submit" VALUE="Berechnen">
     </div>
     <div class="buttonCalculation">
-        <button onclick="set_Result('4117000000111700000000')">Reset Counter</button> <br>
+        <button onclick="set_Result('4117000000111700000000')">Counter zur&uuml;cksetzen</button> <br>
         <button onclick="set_Result('41010006150708')">Stündliche Messung; nach sechs Stunden senden</button> <br>
         <button onclick="set_Result('4101000C1501C2')">15-minütliche Messung; nach drei Stunden senden</button> <br>
-        <button onclick="set_Result('411433')">Activate Counter B</button> <br>
-        <button onclick="set_Result('411423')">Deactivate Counter B</button> <br>
+        <button onclick="set_Result('411433')">Counter B aktivieren</button> <br>
+        <button onclick="set_Result('411423')">Counter B deaktivieren</button> <br>
     </div>
 </div>
 <div>
