@@ -62,16 +62,16 @@
         for (let i=0; i<table.length; i++){
             if (table[i].checked){
                 if (table[i].value === "transmit_period_text") {
-                    downlink += "01";
                     let hex = parseInt(document.getElementById("transmit_period_text").value).toString(16).toUpperCase();
-                    hex = "0".repeat(4-hex.length) + hex;
-                    downlink += hex;
+                    if (!(hex === "NAN")){
+                        downlink += "01" + "0".repeat(4-hex.length) + hex;
+                    }
 
                 } if (table[i].value === "history_period_text"){
-                    downlink += "15";
                     let hex = (parseInt(document.getElementById("history_period_text").value)*30).toString(16).toUpperCase();
-                    hex = "0".repeat(4-hex.length) + hex;
-                    downlink += hex;
+                    if (!(hex === "NAN")){
+                        downlink += "15" + "0".repeat(4-hex.length) + hex;
+                    }
                 } if (table[i].id === "time_stamping"){
                     let radio_buttons = document.getElementsByName("time_stamping");
                     for (let x=0; x<radio_buttons.length; x++){
