@@ -9,18 +9,15 @@
     background: pink;
     float: left;
 }
-
 .wrapperCalculation .buttonCalculation{
     width: 40%;
     height: inherit;
     background: yellow;
     float: left;
 }
-
 .buttonCalculation button{
     text-align: center;
     width: 400px;
-
 }
 .result{
     width: 100%;
