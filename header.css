@@ -4,7 +4,7 @@ html, body {
     font-size: 15px;
     line-height: 1.5;
     width: 100%;
-    margin: 0;
+    margin: 0 0 50px;
 }
 
 h1{
@@ -16,8 +16,11 @@ h1{
 .image_background{
     width: 100%;
     min-height: 300px;
-    background-image: url("https://admiralcloud.fhh-infra.de/v5/deliverEmbed/dc9a9534-c881-4f19-982f-5f6f808a1f20/image_webp/manualcrop_free/1920/350/blur/0,0,1920,350?poc=true");
+    background-image: url("bilder/hamburg.jpg");
     background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: local;
 }
 
 .black{

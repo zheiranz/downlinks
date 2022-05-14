@@ -10,19 +10,12 @@
 <body>
 
 <header>
-    <!--
-    <div class="image_background">
-        <div class="center">
-            <h1 class="animate-bottom black" style="margin-bottom: 0">Downlink Generator</h1>
-            <button onclick="location.href='https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf';">Technical Reference Manual</button>
-        </div>
-    </div>
-    -->
     <div class="image_background">
         <div class="center">
             <div>
                 <h1 class="animate-bottom black" style="margin-bottom: 0">Downlink Generator</h1>
-                <button onclick="location.href='https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf';">Technical Reference Manual</button>
+                <a href="https://www.adeunis.com/wp-content/uploads/2020/01/User_Guide_PULSE_V3_LoRaWAN_US915_UG_V1.0.0_GB.pdf"><button>User Guide</button></a>
+                <a href="https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf"><button>Technical Reference Manual</button></a>
             </div>
         </div>
     </div>
@@ -47,15 +40,15 @@
         <input onclick="calculate()" type="submit" VALUE="Berechnen">
     </div>
     <div class="buttonCalculation">
-        <button onclick="set_Result('4117000000111700000000')">Counter zur&uuml;cksetzen</button> <br>
-        <button onclick="set_Result('41010006150708')">Stündliche Messung; nach sechs Stunden senden</button> <br>
-        <button onclick="set_Result('4101000C1501C2')">15-minütliche Messung; nach drei Stunden senden</button> <br>
-        <button onclick="set_Result('411433')">Counter B aktivieren</button> <br>
-        <button onclick="set_Result('411423')">Counter B deaktivieren</button> <br>
+        <button class="btn" onclick="set_Result('4117000000111700000000')">Counter zur&uuml;cksetzen<span>4117000000111700000000</span></button> <br>
+        <button class="btn" onclick="set_Result('41010006150708')">Stündliche Messung; nach sechs Stunden senden</button> <br>
+        <button class="btn" onclick="set_Result('4101000C1501C2')">15-minütliche Messung; nach drei Stunden senden</button> <br>
+        <button class="btn" onclick="set_Result('411433')">Counter B aktivieren</button> <br>
+        <button class="btn" onclick="set_Result('411423')">Counter B deaktivieren</button> <br>
     </div>
 </div>
-<div>
-    <label for="result_field"></label><input type="text" value="" class="result" id="result_field" readonly>
+<div class="result">
+    <label for="result_field"></label><input type="text" value="" id="result_field" readonly>
 </div>
 </body>
 <script>

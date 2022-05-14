@@ -1,17 +1,18 @@
 .wrapperCalculation{
     margin: 0 auto;
     width: auto;
+    height: 200px;
 }
 .wrapperCalculation .calculate{
     width: 60%;
-    height: 200px;
+    height: inherit;
     background: pink;
     float: left;
 }
 
 .wrapperCalculation .buttonCalculation{
     width: 40%;
-    height: 200px;
+    height: inherit;
     background: yellow;
     float: left;
 }
@@ -20,4 +21,11 @@
     text-align: center;
     width: 400px;
 
+}
+.result{
+    width: 100%;
+    text-align: center;
+}
+.result input{
+    text-align: center;
 }
