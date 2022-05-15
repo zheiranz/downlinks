@@ -31,7 +31,7 @@
         </div>
         <div>
             <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
-            <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
+            <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="1" max="1092">
         </div>
         <div>
             <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
@@ -85,12 +85,11 @@
         }
         set_Result(downlink)
     }
-
     function copy_Clipboard(element){
         element.select();
         element.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(element.value);
-        document.getElementById("tooltip").innerHTML = "Copied!"
+        document.getElementById("tooltip").innerHTML = "Copied!";
     }
 </script>
 </html>
