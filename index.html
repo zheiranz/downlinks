@@ -49,7 +49,7 @@
     </div>
 </div>
 <div class="result">
-    <label for="result_field"></label><input type="text" value="" id="result_field" readonly>
+    <input type="text" id="result_field" readonly><br><label for="result_field"></label>
 </div>
 </body>
 <script>
@@ -66,7 +66,6 @@
                     if (!(hex === "NAN")){
                         downlink += "01" + "0".repeat(4-hex.length) + hex;
                     }
-
                 } if (table[i].value === "history_period_text"){
                     let hex = (parseInt(document.getElementById("history_period_text").value)*30).toString(16).toUpperCase();
                     if (!(hex === "NAN")){
@@ -82,7 +81,7 @@
                 }
             }
         }
-        document.getElementById("result_field").value = downlink;
+        set_Result(downlink)
     }
 </script>
 </html>

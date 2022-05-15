@@ -2,6 +2,7 @@
     margin: 0 auto;
     width: auto;
     height: 400px;
+    position: relative;
 }
 .wrapperCalculation .calculate{
     width: 60%;
@@ -15,14 +16,16 @@
     background: yellow;
     float: left;
 }
-.buttonCalculation button{
-    text-align: center;
-    width: 400px;
-}
 .result{
     width: 100%;
     text-align: center;
 }
 .result input{
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 32px;
     text-align: center;
+    min-width: 600px;
+    min-height: 50px;
+    font-size: 30px;
 }
