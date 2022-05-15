@@ -1,5 +1,5 @@
 .wrapperCalculation{
-    margin: 0 auto;
+    margin-bottom: 20px;
     width: auto;
     height: 400px;
     position: relative;
@@ -21,7 +21,6 @@
     text-align: center;
 }
 .result input{
-    margin: 20px;
     padding: 8px;
     border: 1px solid #cccccc;
     border-radius: 32px;

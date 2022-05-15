@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="btn.css">
+    <link rel="stylesheet" href="tooltip.css">
 </head>
 <body>
 
@@ -14,7 +15,7 @@
     <div class="image_background">
         <div class="center">
             <div>
-                <h1 class="animate-bottom black" style="margin-bottom: 0">Downlink Generator</h1>
+                <h1 class="animate-bottom black" style="margin-bottom: 0">Adeunis Downlink Generator</h1>
                 <a href="https://www.adeunis.com/wp-content/uploads/2020/01/User_Guide_PULSE_V3_LoRaWAN_US915_UG_V1.0.0_GB.pdf"><button>User Guide</button></a>
                 <a href="https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf"><button>Technical Reference Manual</button></a>
             </div>
@@ -48,8 +49,9 @@
         <button class="btn" onclick="set_Result('411423')"><span>Counter B deaktivieren</span></button> <br>
     </div>
 </div>
-<div class="result">
-    <input type="text" id="result_field" placeholder="Downlink" readonly><br><label for="result_field"></label>
+<div class="result tooltip">
+    <input type="text" id="result_field" placeholder="Downlink" onmouseout="document.getElementById('tooltip').innerHTML='Copy to clipboard'" onclick="copy_Clipboard(document.getElementById('result_field'))" readonly><br><label for="result_field"></label>
+    <span class="tooltiptext" id="tooltip">Copy to clipboard</span>
 </div>
 </body>
 <script>
@@ -82,6 +84,13 @@
             }
         }
         set_Result(downlink)
+    }
+
+    function copy_Clipboard(element){
+        element.select();
+        element.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(element.value);
+        document.getElementById("tooltip").innerHTML = "Copied!"
     }
 </script>
 </html>
