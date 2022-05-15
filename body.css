@@ -1,20 +1,21 @@
 .wrapperCalculation{
     margin-bottom: 20px;
     width: auto;
-    height: 400px;
+    height: 429px;
     position: relative;
 }
 .wrapperCalculation .calculate{
     width: 60%;
     height: inherit;
-    background: pink;
+    background: rgba(255, 192, 203, 0.4);
     float: left;
 }
 .wrapperCalculation .buttonCalculation{
     width: 40%;
     height: inherit;
-    background: yellow;
+    background: rgba(255, 255, 0, 0.4);
     float: right;
+    position: relative;
 }
 .result{
     width: 100%;

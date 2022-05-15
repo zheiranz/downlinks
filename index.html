@@ -25,28 +25,28 @@
 
 <div class="wrapperCalculation">
     <div class="calculate">
-        <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Messanzahl - Transmit Period</label>
-        <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
-        <br>
-
-        <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
-        <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
-        <br>
-
-        <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
-        <label><input type="radio" name="time_stamping" value="1201">On</label>
-        <label><input type="radio" name="time_stamping" value="1200" checked="checked">Off</label>
-
-        <br>
-
+        <div>
+            <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Messanzahl - Transmit Period</label>
+            <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
+        </div>
+        <div>
+            <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
+            <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="0" max="1092">
+        </div>
+        <div>
+            <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
+            <label><input type="radio" name="time_stamping" value="1201">On</label>
+            <label><input type="radio" name="time_stamping" value="1200" checked="checked">Off</label>
+        </div>
         <input onclick="calculate()" type="submit" VALUE="Berechnen">
     </div>
     <div class="buttonCalculation">
-        <button class="btn" onclick="set_Result('4117000000111700000000')"><span>Counter zur&uuml;cksetzen</span></button> <br>
-        <button class="btn" onclick="set_Result('41010006150708')"><span>1h Messung; sechs Messungen </span></button> <br>
-        <button class="btn" onclick="set_Result('4101000C1501C2')"><span>15-min Messung; 12 Messungen </span></button> <br>
+        <button class="btn" style="margin-top: 15px;" onclick="set_Result('4117000000111700000000')"><span>Counter zur&uuml;cksetzen</span></button> <br>
+        <button class="btn" onclick="set_Result('41010006150708')"><span>1h Messung; sechs Messungen</span></button> <br>
+        <button class="btn" onclick="set_Result('4101000C1501C2')"><span>15-min Messung; 12 Messungen</span></button> <br>
         <button class="btn" onclick="set_Result('411433')"><span>Counter B aktivieren</span></button> <br>
         <button class="btn" onclick="set_Result('411423')"><span>Counter B deaktivieren</span></button> <br>
+        <button class="btn" onclick="set_Result('480001')"><span>Reboot Ger&aumlt</span></button> <br>
     </div>
 </div>
 <div class="result tooltip">
