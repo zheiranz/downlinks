@@ -11,17 +11,22 @@ function calculate() {
                 if (!(hex === "NAN")){
                     downlink += "01" + "0".repeat(4-hex.length) + hex;
                 }
-            } if (table[i].value === "history_period_text"){
+            } else if (table[i].value === "history_period_text"){
                 let hex = (parseInt(document.getElementById("history_period_text").value)*30).toString(16).toUpperCase();
                 if (!(hex === "NAN")){
                     downlink += "15" + "0".repeat(4-hex.length) + hex;
                 }
-            } if (table[i].id === "time_stamping"){
+            } else if (table[i].id === "time_stamping"){
                 let radio_buttons = document.getElementsByName("time_stamping");
                 for (let x=0; x<radio_buttons.length; x++){
                     if (radio_buttons[x].checked){
                         downlink += radio_buttons[x].value;
                     }
+                }
+            } else if (table[i].id === "set_counter_a"){
+                let hex = parseInt(document.getElementById("set_counter_a_text").value).toString(16).toUpperCase();
+                if (!(hex === "NAN")){
+                    downlink += "17" + "0".repeat(8-hex.length) + hex;
                 }
             }
         }
