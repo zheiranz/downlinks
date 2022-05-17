@@ -17,12 +17,9 @@ function calculate() {
                     downlink += "15" + "0".repeat(4-hex.length) + hex;
                 }
             } else if (table[i].id === "time_stamping"){
-                let radio_buttons = document.getElementsByName("time_stamping");
-                for (let x=0; x<radio_buttons.length; x++){
-                    if (radio_buttons[x].checked){
-                        downlink += radio_buttons[x].value;
-                    }
-                }
+                if (document.getElementById("test").checked){
+                    downlink += "1201";
+                } else{downlink += "1200";}
             } else if (table[i].id === "set_counter_a"){
                 let hex = parseInt(document.getElementById("set_counter_a_text").value).toString(16).toUpperCase();
                 if (!(hex === "NAN")){

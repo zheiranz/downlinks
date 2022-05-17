@@ -28,7 +28,33 @@
     border-style: solid;
     border-color: #000000 transparent transparent transparent;
 }
-.tooltip:hover .tooltiptext {
+.tooltiptextright{
+    visibility: hidden;
+    width: 300px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 100%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip .tooltiptextright::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #000000 transparent transparent;
+}
+.tooltip:hover .tooltiptext, .tooltip:hover .tooltiptextright {
     visibility: visible;
     opacity: 1;
 }

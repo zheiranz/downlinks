@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="btn.css">
     <link rel="stylesheet" href="tooltip.css">
+    <link rel="stylesheet" href="slider.css">
     <script src="script.js"></script>
 </head>
 <body>
@@ -23,9 +24,10 @@
 
 <div class="wrapperCalculation">
     <div class="calculate">
-        <div>
+        <div class="tooltip">
             <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Messanzahl - Transmit Period</label>
             <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
+            <span class="tooltiptextright">Anzahl Messungen bis zum Senden</span>
         </div>
         <div>
             <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
@@ -33,14 +35,16 @@
         </div>
         <div>
             <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
-            <label><input type="radio" name="time_stamping" value="1201">On</label>
-            <label><input type="radio" name="time_stamping" value="1200" checked="checked">Off</label>
+            <label class="switch">
+                <input type="checkbox" id="test">
+                <span class="slider"></span>
+            </label>
         </div>
         <div>
             <input type="checkbox" id="set_counter_a" class="checkbox"><label for="set_counter_a">Z&aumlhler A setzen - Set Counter A</label>
             <label for="set_counter_a_text"></label><input type="number" id="set_counter_a_text" placeholder="Zählerstand" min="0" max="4294967295">
         </div>
-        <input onclick="calculate()" type="submit" VALUE="Berechnen">
+        <input onclick="calculate()" type="submit" value="Berechnen">
     </div>
     <div class="buttonCalculation">
         <button class="btn" style="margin-top: 15px;" onclick="set_Result('4117000000111700000000')"><span>Counter zur&uuml;cksetzen</span></button> <br>
@@ -52,7 +56,7 @@
     </div>
 </div>
 <div class="result tooltip">
-    <input type="text" id="result_field" placeholder="Downlink" onmouseout="document.getElementById('tooltip').innerHTML='Copy to clipboard'" onclick="copy_Clipboard(document.getElementById('result_field'))" readonly><br><label for="result_field"></label>
+    <input type="text" id="result_field" placeholder="Downlink" onmouseout="document.getElementById('tooltip').innerHTML='Copy to clipboard'" onclick="copy_Clipboard(this)" readonly><br><label for="result_field"></label>
     <span class="tooltiptext" id="tooltip">Copy to clipboard</span>
 </div>
 </body>
