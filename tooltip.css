@@ -45,11 +45,11 @@
     transition: opacity 0.3s;
 }
 .tooltip .tooltiptextright::after {
-    content: "";
+    content: " ";
     position: absolute;
     top: 50%;
     right: 100%;
-    margin-left: -5px;
+    margin-top: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent #000000 transparent transparent;

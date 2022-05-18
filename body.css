@@ -9,6 +9,7 @@
     height: inherit;
     background: rgba(255, 192, 203, 0.4);
     float: left;
+    position: relative;
 }
 .wrapperCalculation .buttonCalculation{
     width: 40%;
@@ -29,4 +30,16 @@
     min-width: 600px;
     min-height: 50px;
     font-size: 30px;
+}
+.wrapperButton{
+    height: 395px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.option{
+    width: 50%;
 }
