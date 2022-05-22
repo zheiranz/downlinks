@@ -42,4 +42,11 @@
 }
 .option{
     width: 50%;
+    height: auto;
+    margin: 20px 20px 20px 0;
+    font-family: inherit;
+    font-size: 24px;
+}
+.option input{
+    font-size: 24px;
 }

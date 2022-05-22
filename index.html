@@ -16,36 +16,38 @@
     <div class="container">
         <div class="center">
             <h1 class="animate-bottom">Adeunis Downlink Generator</h1>
-            <a href="https://www.adeunis.com/wp-content/uploads/2020/01/User_Guide_PULSE_V3_LoRaWAN_US915_UG_V1.0.0_GB.pdf"><button>User Guide</button></a>
-            <a href="https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf"><button>Technical Reference Manual</button></a>
+            <div>
+                <a href="https://www.adeunis.com/wp-content/uploads/2020/01/User_Guide_PULSE_V3_LoRaWAN_US915_UG_V1.0.0_GB.pdf"><button>User Guide</button></a>
+                <a href="https://www.adeunis.com/wp-content/uploads/2019/09/PULSE_V4-Technical_Reference_Manual_APP_2.1-22.02.2021-1.pdf"><button>Technical Reference Manual</button></a>
+            </div>
         </div>
     </div>
 </header>
 
 <div class="wrapperCalculation">
     <div class="calculate">
-        <div class="option">
-            <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Messanzahl - Transmit Period</label>
+        <div class="option tooltip">
+            <input type="checkbox" id="transmit_period" value="transmit_period_text" class="checkbox"><label for="transmit_period">Transmit Period</label>
             <label for="transmit_period_text"></label><input type="number" id="transmit_period_text" placeholder="Anzahl" min="0" max="65535">
-            <span class="tooltiptextright">Anzahl Messungen bis zum Senden</span>
+            <span class="tooltiptextright">Anzahl der Messungen bis zum Uplink. </span>
         </div>
-        <div class="option">
-            <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">Messintervall - History Period</label>
+        <div class="option tooltip">
+            <input type="checkbox" id="history_period" value="history_period_text" class="checkbox"><label for="history_period">History Period</label>
             <label for="history_period_text"></label><input type="number" id="history_period_text" placeholder="Minuten" min="1" max="1092">
-            <span class="tooltiptextright">Anzahl Messungen bis zum Senden</span>
+            <span class="tooltiptextright">Zeitabstand zwischen zwei Messungen. </span>
         </div>
-        <div class="option">
-            <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Zeitstempel - Time Stamping</label>
+        <div class="option tooltip">
+            <input type="checkbox" id="time_stamping" class="checkbox"><label for="time_stamping">Time Stamping</label>
             <label class="switch">
                 <input type="checkbox" id="test">
                 <span class="slider"></span>
             </label>
-            <span class="tooltiptextright">Anzahl Messungen bis zum Senden</span>
+            <span class="tooltiptextright">Fügt jedem Uplink einen Zeitstempel hinzu. </span>
         </div>
-        <div class="option">
-            <input type="checkbox" id="set_counter_a" class="checkbox"><label for="set_counter_a">Z&aumlhler A setzen - Set Counter A</label>
+        <div class="option tooltip">
+            <input type="checkbox" id="set_counter_a" class="checkbox"><label for="set_counter_a">Set Counter A</label>
             <label for="set_counter_a_text"></label><input type="number" id="set_counter_a_text" placeholder="Zählerstand" min="0" max="4294967295">
-            <span class="tooltiptextright">Anzahl Messungen bis zum Senden</span>
+            <span class="tooltiptextright">Setzt den Counter A auf einen bestimmten Wert. </span>
         </div>
         <div class="option">
             <input onclick="calculate()" type="submit" value="Berechnen">
@@ -53,12 +55,12 @@
     </div>
     <div class="buttonCalculation">
         <div class="wrapperButton">
-            <button class="btn" onclick="set_Result('4117000000111700000000')"><span>Counter zur&uuml;cksetzen</span></button> <br>
-            <button class="btn" onclick="set_Result('41010006150708')"><span>1h Messung; sechs Messungen</span></button> <br>
-            <button class="btn" onclick="set_Result('4101000C1501C2')"><span>15-min Messung; 12 Messungen</span></button> <br>
-            <button class="btn" onclick="set_Result('411433')"><span>Counter B aktivieren</span></button> <br>
-            <button class="btn" onclick="set_Result('411423')"><span>Counter B deaktivieren</span></button> <br>
-            <button class="btn" onclick="set_Result('480001')"><span>Reboot Ger&aumlt</span></button> <br>
+            <button class="page_button" onclick="set_Result('4117000000111700000000')"><span>Counter zur&uuml;cksetzen</span></button> <br>
+            <button class="page_button" onclick="set_Result('41010006150708')"><span>1h Messung; sechs Messungen</span></button> <br>
+            <button class="page_button" onclick="set_Result('4101000C1501C2')"><span>15-min Messung; 12 Messungen</span></button> <br>
+            <button class="page_button" onclick="set_Result('411433')"><span>Counter B aktivieren</span></button> <br>
+            <button class="page_button" onclick="set_Result('411423')"><span>Counter B deaktivieren</span></button> <br>
+            <button class="page_button" onclick="set_Result('480001')"><span>Reboot Ger&auml;t</span></button> <br>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-.btn {
+.page_button {
     width: 500px;
     border: none;
     display: block;
@@ -16,11 +16,11 @@
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba(0,0,0,0.20);
 }
-.btn span {
+.page_button span {
     position: relative;
     z-index: 1;
 }
-.btn:after {
+.page_button:after {
     z-index: 0;
     content: "";
     position: absolute;
@@ -34,7 +34,7 @@
     -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
     transform: translateX(-98%) translateY(-25%) rotate(45deg);
 }
-.btn:hover:after {
+.page_button:hover:after {
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
